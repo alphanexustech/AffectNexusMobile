@@ -4,8 +4,8 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -24,14 +24,13 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class LoginActivity extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity {
 
     private AutoCompleteTextView Username;
     private EditText Password;
     private Button Login;
 
     private TextView Info;
-    private TextView Error;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,6 @@ public class LoginActivity extends AppCompatActivity {
         Login = (Button) findViewById(R.id.log_in_button);
 
         Info = (TextView)findViewById(R.id.info);
-        Error = (TextView)findViewById(R.id.error);
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,12 +65,10 @@ public class LoginActivity extends AppCompatActivity {
 
     private void validate(String username, String password) {
         if (username != "" && password != "") {
-            Error.setText("");
             Info.setText("Loading...");
             serverValidation(username, password);
         } else {
-            Error.setText("The login information is invalid.");
-            Info.setText("");
+            Info.setText("The login information is invalid.");
         }
     }
 
@@ -100,29 +96,26 @@ public class LoginActivity extends AppCompatActivity {
                     fos.close();
                     
                     Info.setText("");
-                    Intent intent = new Intent(LoginActivity.this, NexusActivity.class);
+                    Intent intent = new Intent(SignupActivity.this, NexusActivity.class);
                     startActivity(intent);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
-                    Error.setText("There was a server error.");
-                    Info.setText("");
+                    Info.setText("Fail 1");
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Error.setText("There was a server error.");
-                    Info.setText("");
+                    Info.setText("Fail 2");
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                Error.setText("Sorry, the username and password do not match.");
-                Info.setText("");
+                Info.setText("Sorry, the username and password do not match.");
             }
         });
 
         // Add the request to the queue
-        HTTPService.getInstance(LoginActivity.this).addToRequestQueue(jsonRequest);
+        HTTPService.getInstance(SignupActivity.this).addToRequestQueue(jsonRequest);
     }
 
 
