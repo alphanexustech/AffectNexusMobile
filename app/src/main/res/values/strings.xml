@@ -4,15 +4,16 @@
     <!-- Strings related to login -->
     <string name="prompt_username">Username</string>
     <string name="prompt_password">Password</string>
-    <string name="action_log_in_page_button">Log in</string>
-    <string name="action_sign_up_page_button">Sign up</string>
-    <string name="action_log_in">Log in</string>
-    <string name="action_log_in_short">Log in</string>
+    <string name="action_log_in_page_button">Log In</string>
+    <string name="action_sign_up_page_button">Sign Up</string>
+    <string name="action_log_in">Log In</string>
+    <string name="action_log_in_short">Log In</string>
     <string name="error_invalid_username">This username is too short</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="title_activity_login">Login</string>
+    <string name="title_activity_login">Log In</string>
+    <string name="title_activity_signup">Sign Up</string>
     <string name="title_home">Home</string>
     <string name="title_nexus">Nexus</string>
     <string name="title_process">Process</string>
@@ -111,4 +112,5 @@
     <string name="call_to_action">Finds emotions in text!</string>
     <string name="logo_description">Logo</string>
     <string name="hex_image">Hexagon</string>
+    <string name="action_sign_up">Sign Up</string>
 </resources>

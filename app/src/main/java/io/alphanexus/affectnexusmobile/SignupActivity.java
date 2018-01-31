@@ -26,28 +26,39 @@ import java.io.IOException;
 
 public class SignupActivity extends AppCompatActivity {
 
+    private AutoCompleteTextView Email;
     private AutoCompleteTextView Username;
+    private EditText ConfirmPassword;
     private EditText Password;
-    private Button Login;
+    private Button Signup;
 
     private TextView Info;
+    private TextView Error;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_signup);
         setupActionBar();
 
+        Email = (AutoCompleteTextView)findViewById(R.id.email);
         Username = (AutoCompleteTextView)findViewById(R.id.username);
         Password = (EditText) findViewById(R.id.password);
-        Login = (Button) findViewById(R.id.log_in_button);
+        ConfirmPassword = (EditText) findViewById(R.id.confirm_password);
+        Signup = (Button) findViewById(R.id.sign_in_button);
 
         Info = (TextView)findViewById(R.id.info);
+        Error = (TextView)findViewById(R.id.error);
 
-        Login.setOnClickListener(new View.OnClickListener() {
+        Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validate(Username.getText().toString(), Password.getText().toString());
+                validate(
+                    Email.getText().toString(),
+                    Username.getText().toString(),
+                    ConfirmPassword.getText().toString(),
+                    Password.getText().toString()
+                );
             }
         });
     }
@@ -63,17 +74,19 @@ public class SignupActivity extends AppCompatActivity {
         }
     }
 
-    private void validate(String username, String password) {
+    private void validate(String email, String username, String password, String confirmPassword) {
         if (username != "" && password != "") {
+            Error.setText("");
             Info.setText("Loading...");
             serverValidation(username, password);
         } else {
-            Info.setText("The login information is invalid.");
+            Error.setText("The login information is invalid.");
+            Info.setText("");
         }
     }
 
     private void serverValidation(final String username, final String password) {
-        String url = "http://affectnexus.com:3000/users/login";
+        String url = "http://affectnexus.com:3000/users/signup";
         JSONObject payload = new JSONObject();
         try {
             payload.put("password", password);
@@ -100,17 +113,19 @@ public class SignupActivity extends AppCompatActivity {
                     startActivity(intent);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
-                    Info.setText("Fail 1");
+                    Info.setText("");
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Info.setText("Fail 2");
+                    Error.setText("There was a server error");
+                    Info.setText("");
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                Info.setText("Sorry, the username and password do not match.");
+                Error.setText("Sorry, ...");
+                Info.setText("");
             }
         });
 

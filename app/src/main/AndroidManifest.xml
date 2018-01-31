@@ -30,6 +30,14 @@
                 android:value="io.alphanexus.affectnexusmobile.MainActivity" />
         </activity>
         <activity
+            android:name=".SignupActivity"
+            android:label="@string/title_activity_signup"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.alphanexus.affectnexusmobile.MainActivity" />
+        </activity>
+        <activity
             android:name=".NexusActivity"
             android:label="@string/title_activity_nexus"
             android:theme="@style/AppTheme.NoActionBar"></activity>
