@@ -113,4 +113,6 @@
     <string name="logo_description">Logo</string>
     <string name="hex_image">Hexagon</string>
     <string name="action_sign_up">Sign Up</string>
+    <string name="prompt_email">E-mail</string>
+    <string name="prompt_confirm_password">Confirm Password</string>
 </resources>
