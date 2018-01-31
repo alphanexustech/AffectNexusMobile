@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
-                    android:inputType="text"
+                    android:inputType="text|textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:textColor="@color/colorPrimaryFont" />
@@ -64,7 +64,7 @@
                 android:textColorHint="@color/colorSecondaryFont">
 
                 <EditText
-                    android:id="@+id/confirm_password"
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
@@ -83,7 +83,7 @@
                 android:textColorHint="@color/colorSecondaryFont">
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/confirm_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_confirm_password"

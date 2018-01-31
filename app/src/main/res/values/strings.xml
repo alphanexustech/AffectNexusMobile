@@ -8,9 +8,11 @@
     <string name="action_sign_up_page_button">Sign Up</string>
     <string name="action_log_in">Log In</string>
     <string name="action_log_in_short">Log In</string>
+    <string name="error_invalid_email">The E-mail is in invalid.</string>
     <string name="error_invalid_username">This username is too short</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_incorrect_confirm_password">The password fields do not match</string>
     <string name="error_field_required">This field is required</string>
     <string name="title_activity_login">Log In</string>
     <string name="title_activity_signup">Sign Up</string>

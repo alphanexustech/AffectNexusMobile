@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -23,6 +24,8 @@ import org.json.JSONObject;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -56,8 +59,8 @@ public class SignupActivity extends AppCompatActivity {
                 validate(
                     Email.getText().toString(),
                     Username.getText().toString(),
-                    ConfirmPassword.getText().toString(),
-                    Password.getText().toString()
+                    Password.getText().toString(),
+                    ConfirmPassword.getText().toString()
                 );
             }
         });
@@ -75,22 +78,92 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void validate(String email, String username, String password, String confirmPassword) {
-        if (username != "" && password != "") {
+        boolean cancel = false;
+        View focusView = null;
+
+        // Check for a valid confirm password.
+        if (TextUtils.isEmpty(confirmPassword)) {
+            ConfirmPassword.setError(getString(R.string.error_field_required));
+            focusView = ConfirmPassword;
+            cancel = true;
+        } else if (!(password.equals(confirmPassword))) {
+            ConfirmPassword.setError(getString(R.string.error_incorrect_confirm_password));
+            focusView = ConfirmPassword;
+            cancel = true;
+        }
+
+        // Check for a valid password, if the user entered one.
+        if (TextUtils.isEmpty(password)) {
+            Password.setError(getString(R.string.error_field_required));
+            focusView = Password;
+            cancel = true;
+        } else if (!isPasswordValid(password)) {
+            Password.setError(getString(R.string.error_invalid_password));
+            focusView = Password;
+            cancel = true;
+        }
+
+        // Check for a valid username.
+        if (TextUtils.isEmpty(username)) {
+            Username.setError(getString(R.string.error_field_required));
+            focusView = Username;
+            cancel = true;
+        } else if (!isUsernameValid(username)) {
+            Username.setError(getString(R.string.error_invalid_username));
+            focusView = Username;
+            cancel = true;
+        }
+
+        // Check for a valid email address.
+        if (TextUtils.isEmpty(email)) {
+            Email.setError(getString(R.string.error_field_required));
+            focusView = Email;
+            cancel = true;
+        } else if (!isEmailValid(email)) {
+            Email.setError(getString(R.string.error_invalid_email));
+            focusView = Email;
+            cancel = true;
+        }
+
+        if (cancel) {
+            // There was an error; don't attempt login and focus the first
+            // form field with an error.
+            focusView.requestFocus();
+            // Also, set the other error messages.
+            Error.setText("The sign up information is invalid.");
+            Info.setText("");
+        } else {
             Error.setText("");
             Info.setText("Loading...");
-            serverValidation(username, password);
-        } else {
-            Error.setText("The login information is invalid.");
-            Info.setText("");
+            serverValidation(email, username, password, confirmPassword);
         }
     }
 
-    private void serverValidation(final String username, final String password) {
+    private boolean isPasswordValid(String password) {
+        return password.length() > 3;
+    }
+
+    private boolean isUsernameValid(String username) {
+        return username.length() > 2;
+    }
+
+    private boolean isEmailValid(String email) {
+        String regex = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher((CharSequence) email);
+        return matcher.matches();
+    }
+
+    private void serverValidation( final String email, final String username,
+            final String password, final String confirmPassword) {
         String url = "http://affectnexus.com:3000/users/signup";
         JSONObject payload = new JSONObject();
         try {
-            payload.put("password", password);
+            payload.put("email", email);
             payload.put("username", username);
+            payload.put("password", password);
+            payload.put("confirmPassword", confirmPassword);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -113,6 +186,7 @@ public class SignupActivity extends AppCompatActivity {
                     startActivity(intent);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
+                    Error.setText("There was a server error");
                     Info.setText("");
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -124,7 +198,7 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                Error.setText("Sorry, ...");
+                Error.setText("Sorry, the username is already in use.");
                 Info.setText("");
             }
         });

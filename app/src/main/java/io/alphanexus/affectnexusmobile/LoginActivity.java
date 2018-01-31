@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -66,13 +67,34 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void validate(String username, String password) {
-        if (username != "" && password != "") {
+        boolean cancel = false;
+        View focusView = null;
+
+        // Check for a valid password, if the user entered one.
+        if (TextUtils.isEmpty(password)) {
+            Password.setError(getString(R.string.error_field_required));
+            focusView = Password;
+            cancel = true;
+        }
+
+        // Check for a valid username.
+        if (TextUtils.isEmpty(username)) {
+            Username.setError(getString(R.string.error_field_required));
+            focusView = Username;
+            cancel = true;
+        }
+
+        if (cancel) {
+            // There was an error; don't attempt login and focus the first
+            // form field with an error.
+            focusView.requestFocus();
+            // Also, set the other error messages.
+            Error.setText("The log in information is invalid.");
+            Info.setText("");
+        } else {
             Error.setText("");
             Info.setText("Loading...");
             serverValidation(username, password);
-        } else {
-            Error.setText("The login information is invalid.");
-            Info.setText("");
         }
     }
 
