@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="io.alphanexus.affectnexusmobile.NexusActivity"
-    tools:showIn="@layout/activity_nexus">
+    android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/nexus_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvProcesses"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-</android.support.v4.widget.NestedScrollView>
+</RelativeLayout>

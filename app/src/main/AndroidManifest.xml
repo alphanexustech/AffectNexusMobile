@@ -39,7 +39,6 @@
         </activity>
         <activity
             android:name=".NexusActivity"
-            android:label="@string/title_activity_nexus"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <meta-data

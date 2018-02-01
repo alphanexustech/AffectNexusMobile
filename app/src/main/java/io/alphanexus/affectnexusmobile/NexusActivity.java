@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -24,33 +27,24 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class NexusActivity extends AppCompatActivity {
 
     private TextView NexusContent;
+    ArrayList<Process> processes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nexus);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        NexusContent = (TextView)findViewById(R.id.nexus_content);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
         FileInputStream fis;
-        JSONObject USER_DATA = new JSONObject();
+        JSONObject USER_DATA;
         try {
             fis = openFileInput("user_data");
             StringBuffer fileContent = new StringBuffer("");
@@ -70,6 +64,7 @@ public class NexusActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     private void loadNexus(JSONObject USER_DATA) {
@@ -87,13 +82,38 @@ public class NexusActivity extends AppCompatActivity {
                 url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                NexusContent.setText(response.toString());
+//                NexusContent.setText(response.toString());
+
+                JSONObject data = new JSONObject();
+                JSONArray processData = new JSONArray();
+                try {
+                    data = (JSONObject) response.get("data");
+                    processData = data.getJSONArray("data");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+                Log.i("data", processData.toString());
+
+
+                // Lookup the recyclerView in activity layout
+                RecyclerView rvProcesses = (RecyclerView) findViewById(R.id.rvProcesses);
+
+                // Initialize processes
+                processes = Process.createProcessList(processData);
+                // Create adapter passing in the sample user data
+                ProcessesAdapter adapter = new ProcessesAdapter(NexusActivity.this, processes);
+                // Attach the adapter to the recyclerView to populate items
+                rvProcesses.setAdapter(adapter);
+                // Set layout manager to position the items
+                rvProcesses.setLayoutManager(new LinearLayoutManager(NexusActivity.this));
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                NexusContent.setText("There was an error loading the content.");
+//                NexusContent.setText("There was an error loading the content.");
             }
         }) {
             // Headers are specified here.
@@ -103,7 +123,6 @@ public class NexusActivity extends AppCompatActivity {
                 headers.put("Access-Control-Allow-Origin", "*");
                 headers.put("Content-Type", "application/json");
                 headers.put("Authorization", "Bearer " + FINAL_ACCESS_TOKEN);
-                Log.i("Headers: ", String.valueOf(headers));
                 return headers;
             }
         };

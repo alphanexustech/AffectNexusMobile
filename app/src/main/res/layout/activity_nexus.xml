@@ -5,43 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/colorBackground"
     tools:context="io.alphanexus.affectnexusmobile.NexusActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
-        android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar">
+            android:background="@drawable/gradient01">
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+            <ImageView
+                android:id="@+id/bullseye"
+                android:layout_width="@dimen/icon_title_primary"
+                android:layout_height="@dimen/icon_title_primary"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="@dimen/primary_margin"
+                app:srcCompat="@drawable/bullseye_neg" />
+
+            <TextView
+                android:id="@+id/nexusTitle"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="@dimen/primary_margin"
+                android:layout_marginRight="@dimen/primary_margin"
+                android:layout_marginTop="@dimen/primary_margin"
+                android:layout_toEndOf="@+id/bullseye"
+                android:layout_toRightOf="@+id/bullseye"
+                android:text="@string/nexus_title"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/primary_heading"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
-        </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_nexus" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        <include
+            layout="@layout/content_nexus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
