@@ -7,6 +7,7 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -114,7 +115,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 try {
                     String FILENAME = "user_data";
-                    String string = "hello world!";
+                    String string = response.toString();
+                    Log.i("Status", "Saved new user data.");
 
                     FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
                     // Save the response
