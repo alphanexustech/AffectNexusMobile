@@ -117,5 +117,7 @@
     <string name="prompt_email">E-mail</string>
     <string name="prompt_confirm_password">Confirm Password</string>
     <string name="nexus_title">Nexus</string>
+    <string name="nexus_description">View recent processes. Your five most recent texts will always appear below with the emotions you found.</string>
     <string name="process_title">Process</string>
+    <string name="process_description">Start a process. Type text and tap the run button to find emotions.</string>
 </resources>

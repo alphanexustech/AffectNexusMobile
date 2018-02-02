@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -35,13 +36,22 @@ public class NexusActivity extends AppCompatActivity {
 
     private TextView NexusContent;
     ArrayList<Process> processes;
+    private ImageView SettingsIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nexus);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+
+        SettingsIcon = (ImageView) findViewById(R.id.settings_icon);
+
+        SettingsIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NexusActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         FileInputStream fis;
         JSONObject USER_DATA;

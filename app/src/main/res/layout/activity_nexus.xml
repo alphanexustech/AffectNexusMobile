@@ -28,20 +28,39 @@
                 android:layout_margin="@dimen/primary_margin"
                 app:srcCompat="@drawable/bullseye_neg" />
 
+            <ImageView
+                android:id="@+id/settings_icon"
+                android:layout_width="@dimen/icon_title_primary"
+                android:layout_height="@dimen/icon_title_primary"
+                android:layout_alignEnd="@+id/nexus_description"
+                android:layout_alignRight="@+id/nexus_description"
+                android:layout_alignTop="@+id/nexusTitle"
+                app:srcCompat="@drawable/cogs_neg" />
+
             <TextView
                 android:id="@+id/nexusTitle"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginBottom="@dimen/primary_margin"
-                android:layout_marginRight="@dimen/primary_margin"
-                android:layout_marginTop="@dimen/primary_margin"
+                android:layout_alignTop="@+id/bullseye"
                 android:layout_toEndOf="@+id/bullseye"
                 android:layout_toRightOf="@+id/bullseye"
                 android:text="@string/nexus_title"
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/primary_heading"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nexus_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/nexusTitle"
+                android:layout_margin="@dimen/primary_margin"
+                android:text="@string/nexus_description"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorPrimaryFont" />
+
         </RelativeLayout>
 
         <include
