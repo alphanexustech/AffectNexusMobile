@@ -93,10 +93,6 @@ public class NexusActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-
-                Log.i("data", processData.toString());
-
-
                 // Lookup the recyclerView in activity layout
                 RecyclerView rvProcesses = (RecyclerView) findViewById(R.id.rvProcesses);
 

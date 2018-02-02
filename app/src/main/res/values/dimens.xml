@@ -8,6 +8,6 @@
     <dimen name="caption_top_padding">8pt</dimen>
     <dimen name="primary_padding">16dp</dimen>
     <dimen name="primary_margin">16dp</dimen>
-    <dimen name="primary_heading">18sp</dimen>
+    <dimen name="primary_heading">16sp</dimen>
     <dimen name="icon_title_primary">24dp</dimen>
 </resources>
