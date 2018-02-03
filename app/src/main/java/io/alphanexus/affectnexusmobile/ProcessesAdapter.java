@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+
 import java.util.List;
 
 public class ProcessesAdapter extends
@@ -37,6 +39,14 @@ public class ProcessesAdapter extends
         TextView documentTextView = viewHolder.documentTextView;
         dateTextView.setText(process.getDate());
         documentTextView.setText(process.getDocument());
+
+        setEmotionRankings(process.getEmotionSet());
+    }
+
+    private void setEmotionRankings(JSONArray emotionSet) {
+        // Compare every emotion in the list and find the top five emotions (Sort)
+
+        // Normalize the scores to relative strengths
     }
 
     @Override
