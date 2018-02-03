@@ -120,4 +120,6 @@
     <string name="nexus_description">View recent processes. Your five most recent texts will always appear below with the emotions you found.</string>
     <string name="process_title">Process</string>
     <string name="process_description">Start a process. Type text and tap the run button to find emotions.</string>
+    <string name="stronger_affect">(Strongest)</string>
+    <string name="weaker_affect">(Weaker)</string>
 </resources>

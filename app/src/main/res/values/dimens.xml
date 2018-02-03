@@ -10,4 +10,5 @@
     <dimen name="primary_margin">16dp</dimen>
     <dimen name="primary_heading">16sp</dimen>
     <dimen name="icon_title_primary">24dp</dimen>
+    <dimen name="colorAffectDisplayNamePadding">4dp</dimen>
 </resources>

@@ -8,4 +8,8 @@
     <color name="colorAccent">#ffffff</color>
     <color name="colorBackground">#222222</color>
     <color name="colorBackgroundAlt">#454545</color>
+    <color name="colorAffectDisplayNameBackground">#010101</color>
+    <color name="colorAffectDisplayNameColor">#cccccc</color>
+    <color name="colorAffectWeightNameBackground">#cccccc</color>
+    <color name="colorAffectWeightNameColor">#131313</color>
 </resources>
