@@ -1,5 +1,7 @@
 package io.alphanexus.affectnexusmobile;
 
+import android.util.Log;
+
 import java.util.Comparator;
 
 public class Emotion implements Comparable<Emotion> {
@@ -33,12 +35,15 @@ public class Emotion implements Comparable<Emotion> {
     @Override
     public int compareTo(Emotion compareEmotion) {
         double compareNormalizedRScore = ((Emotion) compareEmotion).getNormalizedRScore();
-
-        //ascending order
-        //return (int) (this.normalizedRScore - compareNormalizedRScore);
-
-        //descending order
-        return (int) (compareNormalizedRScore - this.normalizedRScore);
+        // Switch the -1 and 1 to change the order, but why would you do that in this case?
+        // Lagger emotions usually are all equal at the bottom, with a score of 0.00000....
+        // It's too noisy down there!
+        if (compareNormalizedRScore < this.normalizedRScore) {
+            return -1;
+        } else if (this.normalizedRScore < compareNormalizedRScore) {
+            return 1;
+        }
+        return 0;
     }
 
     public static Comparator<Emotion> EmotionNameComparator = new Comparator<Emotion>() {

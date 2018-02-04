@@ -57,21 +57,19 @@ public class ProcessesAdapter extends
     private void setEmotionRankings(ProcessesAdapter.ViewHolder viewHolder, JSONArray emotionSet) throws JSONException {
         // Change a JSONArray to an Array
         int emotionLen = emotionSet.length();
-        Log.i("LENGTH: ", String.valueOf(emotionLen));
         Emotion[] emotions = new Emotion[emotionLen];
 
         for (int i = 0; i < emotionLen; i++) {
             JSONObject emotionObject = (JSONObject) emotionSet.get(i);
-            Log.i("eO: ", String.valueOf(emotionSet.get(i)));
             Emotion emotion = new Emotion(
-                    emotionObject.getString("emotion"),
-                    emotionObject.getDouble("normalized_r_score")
+                emotionObject.getString("emotion"),
+                emotionObject.getDouble("normalized_r_score")
             );
             emotions[i] = emotion;
         }
 
         // Compare every emotion in the list and find the top emotions (Sort)
-        Arrays.sort(emotions);
+        Collections.sort(Arrays.asList(emotions));
 
         // Plan to render the five top emotions regardless of score (0.0 renders to 'None'
         TextView emotionName01View = viewHolder.emotionName01View;
@@ -92,13 +90,77 @@ public class ProcessesAdapter extends
         emotionName04View.setText(String.valueOf(emotions[3].getEmotionName()));
         emotionName05View.setText(String.valueOf(emotions[4].getEmotionName()));
 
+        Log.i("1", emotions[0].getEmotionName());
+        Log.i("2", emotions[1].getEmotionName());
+        Log.i("3", emotions[2].getEmotionName());
+        Log.i("4", emotions[3].getEmotionName());
+        Log.i("5", emotions[4].getEmotionName());
+        Log.i("6", emotions[5].getEmotionName());
+        Log.i("7", emotions[6].getEmotionName());
+
+        Log.i("1", String.valueOf(emotions[0].getNormalizedRScore()));
+        Log.i("2", String.valueOf(emotions[1].getNormalizedRScore()));
+        Log.i("3", String.valueOf(emotions[2].getNormalizedRScore()));
+        Log.i("4", String.valueOf(emotions[3].getNormalizedRScore()));
+        Log.i("5", String.valueOf(emotions[4].getNormalizedRScore()));
+        Log.i("6", String.valueOf(emotions[5].getNormalizedRScore()));
+        Log.i("7", String.valueOf(emotions[6].getNormalizedRScore()));
 
         // L1 Normalization of the scores to relative strengths (within the top 5 emotions...
+        // ...and set emotion_weightXX and emotion_nameXX, XX = 01...05
         double totalScore = 0;
         if (emotions[0].getNormalizedRScore() > 0) {
             for (int i = 0; i < 5; i++){
-
+                totalScore += emotions[i].getNormalizedRScore();
             }
+            int emotion01Percent = (int) Math.round(emotions[0].getNormalizedRScore()/totalScore * 100);
+            int emotion02Percent = (int) Math.round(emotions[1].getNormalizedRScore()/totalScore * 100);
+            int emotion03Percent = (int) Math.round(emotions[2].getNormalizedRScore()/totalScore * 100);
+            int emotion04Percent = (int) Math.round(emotions[3].getNormalizedRScore()/totalScore * 100);
+            int emotion05Percent = (int) Math.round(emotions[4].getNormalizedRScore()/totalScore * 100);
+
+            emotionWeight01View.setText(String.valueOf(emotion01Percent) + '%');
+            if (emotion02Percent > 0) {
+                emotionWeight02View.setText(String.valueOf(emotion02Percent) + '%');
+                if (emotion03Percent > 0) {
+                    emotionWeight03View.setText(String.valueOf(emotion03Percent) + '%');
+                    if (emotion04Percent > 0) {
+                        emotionWeight04View.setText(String.valueOf(emotion04Percent) + '%');
+                        if (emotion05Percent > 0) {
+                            emotionWeight05View.setText(String.valueOf(emotion05Percent) + '%');
+                        } else  {
+                            emotionName05View.setText(String.valueOf("--"));
+
+                            emotionWeight05View.setText(String.valueOf("--"));
+                        }
+                    } else {
+                        emotionName04View.setText(String.valueOf("--"));
+                        emotionName05View.setText(String.valueOf("--"));
+
+                        emotionWeight04View.setText(String.valueOf("--"));
+                        emotionWeight05View.setText(String.valueOf("--"));
+                    }
+                } else {
+                    emotionName03View.setText(String.valueOf("--"));
+                    emotionName04View.setText(String.valueOf("--"));
+                    emotionName05View.setText(String.valueOf("--"));
+
+                    emotionWeight03View.setText(String.valueOf("--"));
+                    emotionWeight04View.setText(String.valueOf("--"));
+                    emotionWeight05View.setText(String.valueOf("--"));
+                }
+            } else {
+                emotionName02View.setText(String.valueOf("--"));
+                emotionName03View.setText(String.valueOf("--"));
+                emotionName04View.setText(String.valueOf("--"));
+                emotionName05View.setText(String.valueOf("--"));
+
+                emotionWeight02View.setText(String.valueOf("--"));
+                emotionWeight03View.setText(String.valueOf("--"));
+                emotionWeight04View.setText(String.valueOf("--"));
+                emotionWeight05View.setText(String.valueOf("--"));
+            }
+
         } else {
             emotionName01View.setText(String.valueOf("No emotions"));
             emotionName02View.setText(String.valueOf("--"));
@@ -112,16 +174,6 @@ public class ProcessesAdapter extends
             emotionWeight04View.setText(String.valueOf("--"));
             emotionWeight05View.setText(String.valueOf("--"));
         }
-        // ...and set emotion_weightXX and emotion_nameXX, XX = 01...05
-
-        if (emotions[0].getNormalizedRScore() > 0) {
-            emotionWeight01View.setText(String.valueOf(emotions[0].getNormalizedRScore()));
-            emotionWeight02View.setText(String.valueOf(emotions[1].getNormalizedRScore()));
-            emotionWeight03View.setText(String.valueOf(emotions[2].getNormalizedRScore()));
-            emotionWeight04View.setText(String.valueOf(emotions[3].getNormalizedRScore()));
-            emotionWeight05View.setText(String.valueOf(emotions[4].getNormalizedRScore()));
-        }
-
 
     }
 

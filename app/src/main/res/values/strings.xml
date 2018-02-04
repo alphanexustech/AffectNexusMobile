@@ -122,5 +122,5 @@
     <string name="process_description">Start a process. Type text and tap the run button to find emotions.</string>
     <string name="stronger_affect">(Strongest)</string>
     <string name="weaker_affect">(Weaker)</string>
-    <string name="affect_caption">Out of the five strongest emotions, here are their relative strengths.</string>
+    <string name="affect_caption">Including only the five strongest emotions, here are their relative strengths.</string>
 </resources>
