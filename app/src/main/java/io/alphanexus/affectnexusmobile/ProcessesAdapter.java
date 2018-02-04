@@ -90,22 +90,6 @@ public class ProcessesAdapter extends
         emotionName04View.setText(String.valueOf(emotions[3].getEmotionName()));
         emotionName05View.setText(String.valueOf(emotions[4].getEmotionName()));
 
-        Log.i("1", emotions[0].getEmotionName());
-        Log.i("2", emotions[1].getEmotionName());
-        Log.i("3", emotions[2].getEmotionName());
-        Log.i("4", emotions[3].getEmotionName());
-        Log.i("5", emotions[4].getEmotionName());
-        Log.i("6", emotions[5].getEmotionName());
-        Log.i("7", emotions[6].getEmotionName());
-
-        Log.i("1", String.valueOf(emotions[0].getNormalizedRScore()));
-        Log.i("2", String.valueOf(emotions[1].getNormalizedRScore()));
-        Log.i("3", String.valueOf(emotions[2].getNormalizedRScore()));
-        Log.i("4", String.valueOf(emotions[3].getNormalizedRScore()));
-        Log.i("5", String.valueOf(emotions[4].getNormalizedRScore()));
-        Log.i("6", String.valueOf(emotions[5].getNormalizedRScore()));
-        Log.i("7", String.valueOf(emotions[6].getNormalizedRScore()));
-
         // L1 Normalization of the scores to relative strengths (within the top 5 emotions...
         // ...and set emotion_weightXX and emotion_nameXX, XX = 01...05
         double totalScore = 0;
