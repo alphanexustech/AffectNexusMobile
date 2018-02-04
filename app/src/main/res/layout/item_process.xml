@@ -23,7 +23,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:padding="@dimen/colorAffectDisplayNamePadding"
-            android:text="The strongest emotion is n times as strong as the fifth strongest emotion."
+            android:text="@string/affect_caption"
             android:textAlignment="center"
             android:textColor="@color/colorAccent"
             app:layout_constraintBottom_toBottomOf="parent"
