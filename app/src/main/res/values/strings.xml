@@ -37,8 +37,11 @@
     <string name="process_description_short">Start a process</string>
     <string name="process_description">Start a process</string>
     <string name="process_description_alt">Start a process. Include text and tap the run button to find emotions.</string>
+    <string name="process_description_expanded">Write up to 300 characters of text and tap the button to find emotions.</string>
+    <string name="process_placeholder">Try writing about an important idea or something else you might find interesting.</string>
     <string name="stronger_affect">(Strongest)</string>
     <string name="weaker_affect">(Weaker)</string>
     <string name="affect_caption">Including only the five strongest emotions, here are their relative strengths.</string>
     <string name="loading_text">Loading...</string>
+    <string name="start_process">Start Process</string>
 </resources>
