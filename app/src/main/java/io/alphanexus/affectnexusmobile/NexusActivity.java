@@ -1,14 +1,11 @@
 package io.alphanexus.affectnexusmobile;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -26,7 +23,6 @@ import org.json.JSONObject;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,18 +33,32 @@ public class NexusActivity extends AppCompatActivity {
     private TextView NexusContent;
     ArrayList<Process> processes;
     private ImageView SettingsIcon;
+    private FloatingActionButton ProcessFAB;
+    public TextView InfoText;
+    public TextView DescriptionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nexus);
 
-        SettingsIcon = (ImageView) findViewById(R.id.settings_icon);
+        SettingsIcon = findViewById(R.id.settings_icon);
+        ProcessFAB = findViewById(R.id.process_fab);
+        InfoText = findViewById(R.id.info_text);
+        DescriptionText = findViewById(R.id.process_description);
 
         SettingsIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NexusActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ProcessFAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NexusActivity.this, ProcessActivity.class);
                 startActivity(intent);
             }
         });
@@ -67,11 +77,16 @@ public class NexusActivity extends AppCompatActivity {
             USER_DATA = new JSONObject(fileContent.toString());
             Log.i("Status", "Loaded user data.");
             loadNexus(USER_DATA);
+            // Change loading text to an empty string to hide it
+
         } catch (FileNotFoundException e) {
+            InfoText.setText("Sorry, there was an error. We'll fix it when we find it.");
             e.printStackTrace();
         } catch (JSONException e) {
+            InfoText.setText("Sorry, there was an error. We'll fix it when we find it.");
             e.printStackTrace();
         } catch (IOException e) {
+            InfoText.setText("Sorry, there was an error. We'll fix it when we find it.");
             e.printStackTrace();
         }
 
@@ -94,7 +109,7 @@ public class NexusActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
 //                NexusContent.setText(response.toString());
 
-                JSONObject data = new JSONObject();
+                JSONObject data;
                 JSONArray processData = new JSONArray();
                 try {
                     data = (JSONObject) response.get("data");
@@ -103,17 +118,24 @@ public class NexusActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                // Lookup the recyclerView in activity layout
-                RecyclerView rvProcesses = (RecyclerView) findViewById(R.id.rvProcesses);
+                if (processData.length() > 0) {
+                    // Lookup the recyclerView in activity layout
+                    RecyclerView rvProcesses = (RecyclerView) findViewById(R.id.rvProcesses);
 
-                // Initialize processes
-                processes = Process.createProcessList(processData);
-                // Create adapter passing in the sample user data
-                ProcessesAdapter adapter = new ProcessesAdapter(NexusActivity.this, processes);
-                // Attach the adapter to the recyclerView to populate items
-                rvProcesses.setAdapter(adapter);
-                // Set layout manager to position the items
-                rvProcesses.setLayoutManager(new LinearLayoutManager(NexusActivity.this));
+                    // Initialize processes
+                    processes = Process.createProcessList(processData);
+                    // Create adapter passing in the sample user data
+                    ProcessesAdapter adapter = new ProcessesAdapter(NexusActivity.this, processes);
+                    // Attach the adapter to the recyclerView to populate items
+                    rvProcesses.setAdapter(adapter);
+                    // Set layout manager to position the items
+                    rvProcesses.setLayoutManager(new LinearLayoutManager(NexusActivity.this));
+                    InfoText.setText("");
+                    DescriptionText.setText(R.string.nexus_description);
+                } else {
+                    InfoText.setText("Welcome, let's get started! To run a process, click the button in the bottom right corner.");
+                    DescriptionText.setText(R.string.nexus_description_start);
+                }
             }
         }, new Response.ErrorListener() {
             @Override

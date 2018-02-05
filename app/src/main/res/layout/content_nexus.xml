@@ -4,6 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <TextView
+        android:id="@+id/info_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/primary_margin"
+        android:text="@string/loading_text"
+        android:textColor="@color/colorPrimaryFont" />
+
     <ImageView
         android:id="@+id/hex-mosh_02"
         android:layout_width="wrap_content"
