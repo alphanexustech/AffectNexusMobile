@@ -8,6 +8,14 @@
     android:background="@color/colorBackground"
     tools:context="io.alphanexus.affectnexusmobile.ProcessActivity">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/hex_c2f6ff"
+        app:layout_anchor="@+id/linear_layout"
+        app:layout_anchorGravity="left|bottom" />
+
     <LinearLayout
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
@@ -60,6 +68,7 @@
                 android:layout_margin="@dimen/primary_margin"
                 android:text="@string/process_description_short"
                 android:textAlignment="textStart"
+                android:gravity="start"
                 android:textColor="@color/colorPrimaryFont" />
 
         </RelativeLayout>

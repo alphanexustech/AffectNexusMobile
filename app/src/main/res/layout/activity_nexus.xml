@@ -75,6 +75,7 @@
                 android:layout_margin="@dimen/primary_margin"
                 android:text="@string/nexus_description_short"
                 android:textAlignment="textStart"
+                android:gravity="start"
                 android:textColor="@color/colorPrimaryFont" />
 
         </RelativeLayout>

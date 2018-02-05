@@ -80,6 +80,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private void validate(String email, String username, String password, String confirmPassword) {
         boolean cancel = false;
+        Signup.setEnabled(false);
         View focusView = null;
 
         // Check for a valid confirm password.
@@ -133,6 +134,7 @@ public class SignupActivity extends AppCompatActivity {
             // Also, set the other error messages.
             Error.setText("The sign up information is invalid.");
             Info.setText("");
+            Signup.setEnabled(true);
         } else {
             Error.setText("");
             Info.setText("Loading...");
@@ -186,14 +188,17 @@ public class SignupActivity extends AppCompatActivity {
                     Info.setText("");
                     Intent intent = new Intent(SignupActivity.this, NexusActivity.class);
                     startActivity(intent);
+                    Signup.setEnabled(true);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                     Error.setText("There was a server error");
                     Info.setText("");
+                    Signup.setEnabled(true);
                 } catch (IOException e) {
                     e.printStackTrace();
                     Error.setText("There was a server error");
                     Info.setText("");
+                    Signup.setEnabled(true);
                 }
             }
         }, new Response.ErrorListener() {
@@ -202,6 +207,7 @@ public class SignupActivity extends AppCompatActivity {
                 error.printStackTrace();
                 Error.setText("Sorry, the username is already in use.");
                 Info.setText("");
+                Signup.setEnabled(true);
             }
         });
 

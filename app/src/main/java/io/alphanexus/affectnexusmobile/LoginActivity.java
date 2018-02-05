@@ -69,6 +69,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void validate(String username, String password) {
         boolean cancel = false;
+        Login.setEnabled(false);
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
@@ -92,6 +93,7 @@ public class LoginActivity extends AppCompatActivity {
             // Also, set the other error messages.
             Error.setText("The log in information is invalid.");
             Info.setText("");
+            Login.setEnabled(true);
         } else {
             Error.setText("");
             Info.setText("Loading...");
@@ -126,14 +128,17 @@ public class LoginActivity extends AppCompatActivity {
                     Info.setText("");
                     Intent intent = new Intent(LoginActivity.this, NexusActivity.class);
                     startActivity(intent);
+                    Login.setEnabled(true);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                     Error.setText("There was a server error.");
                     Info.setText("");
+                    Login.setEnabled(true);
                 } catch (IOException e) {
                     e.printStackTrace();
                     Error.setText("There was a server error.");
                     Info.setText("");
+                    Login.setEnabled(true);
                 }
             }
         }, new Response.ErrorListener() {
@@ -142,6 +147,7 @@ public class LoginActivity extends AppCompatActivity {
                 error.printStackTrace();
                 Error.setText("Sorry, the username and password do not match.");
                 Info.setText("");
+                Login.setEnabled(true);
             }
         });
 
