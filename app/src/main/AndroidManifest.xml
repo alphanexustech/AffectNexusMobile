@@ -45,7 +45,8 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".ProcessActivity"></activity>
+        <activity android:name=".ProcessActivity" />
+        <activity android:name=".OptinActivity"></activity>
     </application>
 
 </manifest>

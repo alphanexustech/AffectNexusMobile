@@ -186,7 +186,7 @@ public class SignupActivity extends AppCompatActivity {
                     fos.close();
                     
                     Info.setText("");
-                    Intent intent = new Intent(SignupActivity.this, NexusActivity.class);
+                    Intent intent = new Intent(SignupActivity.this, OptinActivity.class);
                     startActivity(intent);
                     Signup.setEnabled(true);
                 } catch (FileNotFoundException e) {

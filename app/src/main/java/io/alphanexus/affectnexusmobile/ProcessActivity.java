@@ -51,6 +51,11 @@ public class ProcessActivity extends Activity {
         StartProcessButton = findViewById(R.id.start_process_button);
         InfoText = findViewById(R.id.process_info_text);
 
+        // The start button should be false at first. So that we don't send empty requests.
+        StartProcessButton.setEnabled(false);
+        // Make sure the text field is open for business
+        ProcessText.setEnabled(true);
+
         SettingsIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +75,9 @@ public class ProcessActivity extends Activity {
                 //This sets a textview to the current length
                 amountRemaining = maxAmount - s.length();
                 RemainingCharacters.setText(String.valueOf(amountRemaining));
-                if (amountRemaining < 0) {
+                if (amountRemaining > 299) {
+                    StartProcessButton.setEnabled(false);
+                } else if (amountRemaining < 0) {
                     StartProcessButton.setEnabled(false);
                     RemainingCharacters.setTextColor(
                         ContextCompat.getColor(ProcessActivity.this, R.color.colorErrorFont)
@@ -107,16 +114,24 @@ public class ProcessActivity extends Activity {
                     Log.i("Status", "Loaded user data.");
 
                     // Starts the process of calling the server - analyzes emotion.
+                    ProcessText.setEnabled(false);
+                    StartProcessButton.setEnabled(false);
                     InfoText.setText("Loading...");
                     startProcess(String.valueOf(ProcessText.getText()), USER_DATA);
                 } catch (FileNotFoundException e) {
                     InfoText.setText("Sorry, there was an error. We'll fix it when we find it.");
+                    ProcessText.setEnabled(true);
+                    StartProcessButton.setEnabled(true);
                     e.printStackTrace();
                 } catch (JSONException e) {
                     InfoText.setText("Sorry, there was an error. We'll fix it when we find it.");
+                    ProcessText.setEnabled(true);
+                    StartProcessButton.setEnabled(true);
                     e.printStackTrace();
                 } catch (IOException e) {
                     InfoText.setText("Sorry, there was an error. We'll fix it when we find it.");
+                    ProcessText.setEnabled(true);
+                    StartProcessButton.setEnabled(true);
                     e.printStackTrace();
                 }
             }
@@ -156,10 +171,12 @@ public class ProcessActivity extends Activity {
                     InfoText.setText("");
                     Intent intent = new Intent(ProcessActivity.this, NexusActivity.class);
                     startActivity(intent);
+                    ProcessText.setEnabled(true);
                     StartProcessButton.setEnabled(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                     InfoText.setText("There was a server error.");
+                    ProcessText.setEnabled(true);
                     StartProcessButton.setEnabled(true);
                 }
             }
@@ -168,6 +185,7 @@ public class ProcessActivity extends Activity {
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
                 InfoText.setText("There was a server error.");
+                ProcessText.setEnabled(true);
                 StartProcessButton.setEnabled(true);
             }
         }) {

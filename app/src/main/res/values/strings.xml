@@ -44,4 +44,14 @@
     <string name="affect_caption">Including only the five strongest emotions, here are their relative strengths.</string>
     <string name="loading_text">Loading...</string>
     <string name="start_process">Start Process</string>
+    <string name="opt_in_primary">Thanks for signing up!</string>
+    <string name="opt_in_secondary">More data makes it possible for us to build better, accurate, and meaningful products for you! May we use your data for research and development?</string>
+    <string name="opt_in_tertiary">(Change your choice at any time on the settings page.)</string>
+    <string name="opt_in_yes">Yes</string>
+    <string name="opt_in_no">Not right now</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="tos">Terms of Service</string>
+    <string name="settings_email_subscription">E-mail Subscription</string>
+    <string name="settings_delete_description">If you would like to ensure that we no longer collect, disclose, or contact you, then you may delete your account. You may also get in touch with us at contact@alphanex.us for more information.</string>
+    <string name="settings_affective_data">Affective Data</string>
 </resources>
