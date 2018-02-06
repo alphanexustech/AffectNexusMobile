@@ -44,7 +44,7 @@ public class NexusActivity extends AppCompatActivity {
 
         SettingsIcon = findViewById(R.id.settings_icon);
         ProcessFAB = findViewById(R.id.process_fab);
-        InfoText = findViewById(R.id.info_text);
+        InfoText = findViewById(R.id.process_info_text);
         DescriptionText = findViewById(R.id.process_description);
 
         SettingsIcon.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +77,6 @@ public class NexusActivity extends AppCompatActivity {
             USER_DATA = new JSONObject(fileContent.toString());
             Log.i("Status", "Loaded user data.");
             loadNexus(USER_DATA);
-            // Change loading text to an empty string to hide it
 
         } catch (FileNotFoundException e) {
             InfoText.setText("Sorry, there was an error. We'll fix it when we find it.");
