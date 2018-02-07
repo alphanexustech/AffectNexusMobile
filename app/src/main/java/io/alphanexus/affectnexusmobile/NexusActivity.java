@@ -50,7 +50,7 @@ public class NexusActivity extends AppCompatActivity {
         SettingsIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NexusActivity.this, MainActivity.class);
+                Intent intent = new Intent(NexusActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });

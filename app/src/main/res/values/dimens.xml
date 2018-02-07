@@ -12,4 +12,6 @@
     <dimen name="icon_title_primary">24dp</dimen>
     <dimen name="colorAffectDisplayNamePadding">4dp</dimen>
     <dimen name="alt_primary_margin">20dp</dimen>
+    <dimen name="display_primary_heading">30dp</dimen>
+    <dimen name="display_secondary_heading">18dp</dimen>
 </resources>

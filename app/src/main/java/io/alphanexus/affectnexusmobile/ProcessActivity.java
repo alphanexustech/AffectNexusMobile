@@ -59,7 +59,7 @@ public class ProcessActivity extends Activity {
         SettingsIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProcessActivity.this, MainActivity.class);
+                Intent intent = new Intent(ProcessActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });
