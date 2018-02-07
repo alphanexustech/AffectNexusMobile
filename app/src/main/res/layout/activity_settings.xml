@@ -6,36 +6,235 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackgroundAlt">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="140dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/colorErrorFont"
-        android:text="@string/delete_profile_button"
-        android:textColor="@color/colorPrimaryDark"
+    <ScrollView
+        android:id="@+id/main_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:text="@string/settings_delete_profile_text"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="184dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:text="@string/settings_delete_description"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/affect_data_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/settings_affective_data"
+                    android:textColor="@color/colorPrimaryFont"
+                    android:textSize="@dimen/settings_primary_heading"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/affect_description_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="108dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="108dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/settings_affective_data_description_off"
+                    android:textColor="@color/colorSecondaryFont"
+                    android:textSize="@dimen/settings_secondary_heading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/affect_data_title" />
+
+                <Switch
+                    android:id="@+id/affective_data_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/hr_01"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimaryFont"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/affect_description_text" />
+
+                <ImageView
+                    android:id="@+id/user_icon"
+                    android:layout_width="@dimen/icon_button_primary"
+                    android:layout_height="@dimen/icon_button_primary"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hr_01"
+                    app:srcCompat="@drawable/user_neg" />
+
+                <ImageView
+                    android:id="@+id/lock_icon"
+                    android:layout_width="@dimen/icon_button_primary"
+                    android:layout_height="@dimen/icon_button_primary"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/user_icon"
+                    app:srcCompat="@drawable/lock_neg" />
+
+                <ImageView
+                    android:id="@+id/about_icon"
+                    android:layout_width="@dimen/icon_button_primary"
+                    android:layout_height="@dimen/icon_button_primary"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lock_icon"
+                    app:srcCompat="@drawable/question_circle_neg" />
+
+                <Button
+                    android:id="@+id/personal_info_button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/icon_title_primary"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="start"
+                    android:onClick="goProfile"
+                    android:paddingLeft="@dimen/button_icon_padding"
+                    android:text="@string/settings_personal_information"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryFont"
+                    android:textSize="@dimen/settings_primary_heading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hr_01" />
+
+                <Button
+                    android:id="@+id/password_button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/icon_title_primary"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="start"
+                    android:onClick="goPassword"
+                    android:paddingLeft="@dimen/button_icon_padding"
+                    android:text="@string/settings_change_password"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryFont"
+                    android:textSize="@dimen/settings_primary_heading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_info_button" />
+
+                <Button
+                    android:id="@+id/about_button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/icon_title_primary"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="start"
+                    android:onClick="goAbout"
+                    android:paddingLeft="@dimen/button_icon_padding"
+                    android:text="@string/settings_about"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryFont"
+                    android:textSize="@dimen/settings_primary_heading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/password_button" />
+
+                <View
+                    android:id="@+id/hr_02"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimaryFont"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/about_button" />
+
+                <TextView
+                    android:id="@+id/email_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/settings_email_subscription"
+                    android:textColor="@color/colorPrimaryFont"
+                    android:textSize="@dimen/settings_primary_heading"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hr_02" />
+
+                <Switch
+                    android:id="@+id/email_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="16dp"
+                    android:checked="true"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hr_02" />
+
+                <TextView
+                    android:id="@+id/email_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="108dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/settings_email_subscription_description_on"
+                    android:textColor="@color/colorSecondaryFont"
+                    android:textSize="@dimen/settings_secondary_heading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/email_title" />
+
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

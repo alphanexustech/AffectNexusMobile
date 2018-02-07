@@ -14,4 +14,8 @@
     <dimen name="alt_primary_margin">20dp</dimen>
     <dimen name="display_primary_heading">30dp</dimen>
     <dimen name="display_secondary_heading">18dp</dimen>
+    <dimen name="settings_primary_heading">18sp</dimen>
+    <dimen name="settings_secondary_heading">12sp</dimen>
+    <dimen name="button_icon_padding">32dp</dimen>
+    <dimen name="icon_button_primary">16dp</dimen>
 </resources>

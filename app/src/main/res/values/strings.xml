@@ -51,38 +51,44 @@
       Settings information
     -->
     <string name="title_activity_settings">Settings</string>
+
+    <!-- Opt in -->
+    <string name="settings_affective_data">Affective Data</string>
+    <string name="settings_affective_data_description_on">Thanks for deciding to share your affective data with us!</string>
+    <string name="settings_affective_data_description_off">We understand. We won\'t use your data in our research and development</string>
     <string name="opt_in_primary">Thanks for signing up!</string>
     <string name="opt_in_secondary">Our products are more reliable and useful when we have data.\n\nMay we use your data for research and development?</string>
     <string name="opt_in_tertiary">You can change you choice on the settings page.</string>
     <string name="opt_in_yes">Yes</string>
     <string name="opt_in_no">Not right now</string>
-    <string name="privacy_policy"><a href="http://alphanex.us/privacy.pdf">Privacy Policy</a></string>
-    <string name="tos"><a href="http://alphanex.us/tos.pdf">Terms of Service</a></string>
-    <string name="settings_about">About</string>
-    <string name="settings_about_description">Information about the application</string>
-    <string name="settings_personal_information">Personal Information</string>
-    <string name="settings_personal_information_description">Change information about your profile</string>
-    <string name="settings_change_password">Change Password</string>
-    <string name="settings_change_password_description">Manage your log in information</string>
 
     <!-- Personal Information Strings -->
+    <string name="settings_personal_information">Profile</string>
+    <string name="settings_personal_information_description">Change information about your profile</string>
     <string name="settings_first_name">First Name</string>
     <string name="settings_last_name">Last Name</string>
     <string name="settings_display_name">Display Name</string>
     <string name="settings_email">E-mail</string>
-
-    <!-- Change Password Strings -->
-    <string name="settings_username">Username</string>
-    <string name="settings_password">Password</string>
-    <string name="settings_confirm_password">Confirm Password</string>
-    <string name="settings_email_subscription">E-mail Subscription</string>
-    <string name="settings_email_subscription_description_on">We will send you messages about new features.</string>
-    <string name="settings_email_subscription_description_off">We will send you only essential messages</string>
-    <string name="settings_affective_data">Affective Data</string>
-    <string name="settings_affective_data_description_on">Thanks for deciding to share your affective data with us!</string>
-    <string name="settings_affective_data_description_off">We understand. We won\'t use your data in our research and development</string>
-
+    <!-- Delete Profile -->
     <string name="delete_profile_button">Delete Profile</string>
     <string name="settings_delete_profile_text">Delete Profile</string>
     <string name="settings_delete_description">If you would like to ensure that we no longer collect, disclose, or contact you, then you may delete your account. You may also get in touch with us at contact@alphanex.us for more information.</string>
+
+    <!-- Change Password Strings -->
+    <string name="settings_change_password">Password</string>
+    <string name="settings_change_password_description">Manage your log in information</string>
+    <string name="settings_username">Username</string>
+    <string name="settings_password">Password</string>
+    <string name="settings_confirm_password">Confirm Password</string>
+
+    <!-- About -->
+    <string name="settings_about">About</string>
+    <string name="settings_about_description">Information about the application</string>
+    <string name="privacy_policy"><a href="http://alphanex.us/privacy.pdf">Privacy Policy</a></string>
+    <string name="tos"><a href="http://alphanex.us/tos.pdf">Terms of Service</a></string>
+
+    <!-- E-mail Subscription -->
+    <string name="settings_email_subscription">E-mail Subscription</string>
+    <string name="settings_email_subscription_description_on">We will send you messages about new features</string>
+    <string name="settings_email_subscription_description_off">We will send you only essential messages</string>
 </resources>
