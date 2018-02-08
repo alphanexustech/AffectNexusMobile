@@ -3,6 +3,7 @@ package io.alphanexus.affectnexusmobile;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -32,7 +33,6 @@ import java.util.Map;
 
 public class NexusActivity extends AppCompatActivity {
 
-    private TextView NexusContent;
     ArrayList<Process> processes;
     private ImageView SettingsIcon;
     private FloatingActionButton ProcessFAB;
@@ -108,8 +108,6 @@ public class NexusActivity extends AppCompatActivity {
                 url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-//                NexusContent.setText(response.toString());
-
                 JSONObject data;
                 JSONArray processData = new JSONArray();
                 try {
@@ -142,7 +140,20 @@ public class NexusActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-//                NexusContent.setText("There was an error loading the content.");
+                new CountDownTimer(10000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        String message = "You're log in credentials are old. Please log in. We'll help you out, redirecting you to the log in page in ";
+                        String secondsText = " seconds.";
+                        if (millisUntilFinished < 2000) {
+                            secondsText = "second.";
+                        }
+                        InfoText.setText(message + millisUntilFinished / 1000 + secondsText);
+                    }
+                    public void onFinish() {
+                        Intent intent = new Intent(NexusActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    }
+                }.start();
             }
         }) {
             // Headers are specified here.

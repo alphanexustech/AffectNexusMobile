@@ -175,7 +175,7 @@ public class ProcessActivity extends Activity {
                     StartProcessButton.setEnabled(true);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    InfoText.setText("There was a server error.");
+                    InfoText.setText("Sorry, there was a problem handling your request.");
                     ProcessText.setEnabled(true);
                     StartProcessButton.setEnabled(true);
                 }
