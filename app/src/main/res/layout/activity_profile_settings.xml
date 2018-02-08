@@ -75,11 +75,11 @@
                         android:textColorHint="@color/colorSecondaryFont">
 
                         <AutoCompleteTextView
-                            android:id="@+id/last_name"
+                            android:id="@+id/first_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/colorSecondaryFont"
-                            android:hint="@string/settings_last_name"
+                            android:hint="@string/settings_first_name"
                             android:inputType="text"
                             android:maxLines="1"
                             android:singleLine="true"
@@ -93,11 +93,11 @@
                         android:textColorHint="@color/colorSecondaryFont">
 
                         <AutoCompleteTextView
-                            android:id="@+id/first_name"
+                            android:id="@+id/last_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/colorSecondaryFont"
-                            android:hint="@string/settings_first_name"
+                            android:hint="@string/settings_last_name"
                             android:inputType="text"
                             android:maxLines="1"
                             android:singleLine="true"
@@ -134,7 +134,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorPrimary"
-                    android:text="Button"
+                    android:text="@string/settings_update_profile_button_text"
                     android:textColor="@color/colorPrimaryFont"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -178,7 +178,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorErrorFont"
-                    android:text="@string/delete_profile_button"
+                    android:text="@string/settings_delete_profile_text"
                     android:textColor="@color/colorAccent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

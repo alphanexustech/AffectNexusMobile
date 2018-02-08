@@ -72,8 +72,8 @@
     <string name="settings_last_name">Last Name</string>
     <string name="settings_display_name">Display Name</string>
     <string name="settings_email">E-mail</string>
+    <string name="settings_update_profile_button_text">Update Profile</string>
     <!-- Delete Profile -->
-    <string name="delete_profile_button">Delete Profile</string>
     <string name="settings_delete_profile_text">Delete Profile</string>
     <string name="settings_delete_description">If you would like to ensure that we no longer collect, disclose, or contact you, then you may delete your account. You may also get in touch with us at contact@alphanex.us for more information.</string>
 
@@ -81,8 +81,10 @@
     <string name="settings_change_password">Password</string>
     <string name="settings_change_password_description">Manage your log in information</string>
     <string name="settings_username">Username</string>
-    <string name="settings_password">Password</string>
+    <string name="settings_old_password">Old Password</string>
+    <string name="settings_new_password">New Password</string>
     <string name="settings_confirm_password">Confirm Password</string>
+    <string name="settings_update_password_button_text">Update Password</string>
 
     <!-- About -->
     <string name="settings_about">About</string>

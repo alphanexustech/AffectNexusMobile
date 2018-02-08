@@ -135,7 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorPrimary"
+            android:background="@color/colorPrimary"
             android:onClick="goSignup"
             android:text="@string/action_sign_up_page_button"
             android:textColor="@color/colorPrimaryFont" />
@@ -145,7 +145,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorPrimary"
+            android:background="@color/colorPrimary"
             android:onClick="goLogin"
             android:text="@string/action_log_in_page_button"
             android:textColor="@color/colorPrimaryFont" />

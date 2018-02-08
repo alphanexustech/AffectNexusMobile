@@ -51,7 +51,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/affect_data_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/affect_data_title"
+                    android:layout_marginRight="108dp"
+                    android:layout_marginLeft="16dp" />
 
                 <Switch
                     android:id="@+id/affective_data_toggle"
