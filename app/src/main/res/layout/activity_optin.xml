@@ -81,7 +81,7 @@
             android:layout_marginLeft="@dimen/primary_margin"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
+            android:backgroundTint="@android:color/transparent"
             android:onClick="goNexusNo"
             android:text="@string/opt_in_no"
             android:textColor="@color/colorPrimaryFont" />
@@ -93,7 +93,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="@dimen/primary_margin"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:backgroundTint="@color/colorPrimary"
             android:onClick="goNexusYes"
             android:text="@string/opt_in_yes"
             android:textColor="@color/colorPrimaryFont" />

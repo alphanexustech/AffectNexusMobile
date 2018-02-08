@@ -23,7 +23,7 @@
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/affect_data_title"
@@ -221,16 +221,16 @@
                 <TextView
                     android:id="@+id/email_description"
                     android:layout_width="0dp"
-                    android:layout_height="16dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_height="36dp"
                     android:layout_marginEnd="108dp"
+                    android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
                     android:text="@string/settings_email_subscription_description_on"
                     android:textColor="@color/colorSecondaryFont"
                     android:textSize="@dimen/settings_secondary_heading"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/email_title" />
 
