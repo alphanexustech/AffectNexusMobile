@@ -95,6 +95,7 @@
     <string name="tos"><a href="http://alphanex.us/tos.pdf">Terms of Service</a></string>
     <string name="privacy_policy_button_text">Privacy Policy</string>
     <string name="tos_button_text">Terms of Service</string>
+    <string name="settings_copyright">© 2018 Alpha Nexus Technologies LLC</string>
 
     <!-- E-mail Subscription -->
     <string name="settings_email_subscription">E-mail Subscription</string>
