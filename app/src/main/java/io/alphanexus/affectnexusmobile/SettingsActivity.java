@@ -2,7 +2,6 @@ package io.alphanexus.affectnexusmobile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,7 +23,7 @@ public class SettingsActivity extends AppCompatActivity {
         setupActionBar();
 
         AffectiveDataToggle = findViewById(R.id.affective_data_toggle);
-        AffectiveDesciption = findViewById(R.id.affect_description_text);
+        AffectiveDesciption = findViewById(R.id.author_link);
         EmailToggle = findViewById(R.id.email_toggle);
         EmailDescription = findViewById(R.id.email_description);
 
@@ -59,17 +58,17 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void goProfile(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, SettingsProfileActivity.class);
         startActivity(intent);
     }
 
     public void goPassword(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, SettingsPasswordActivity.class);
         startActivity(intent);
     }
 
     public void goAbout(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, SettingsAboutActivity.class);
         startActivity(intent);
     }
 

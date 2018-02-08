@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -39,12 +40,10 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/affect_description_text"
+                    android:id="@+id/author_link"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="108dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="108dp"
                     android:layout_marginStart="16dp"
                     android:text="@string/settings_affective_data_description_off"
                     android:textColor="@color/colorSecondaryFont"
@@ -73,7 +72,7 @@
                     android:background="@color/colorPrimaryFont"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/affect_description_text" />
+                    app:layout_constraintTop_toBottomOf="@+id/author_link" />
 
                 <ImageView
                     android:id="@+id/user_icon"
@@ -112,7 +111,7 @@
                     app:srcCompat="@drawable/question_circle_neg" />
 
                 <Button
-                    android:id="@+id/personal_info_button"
+                    android:id="@+id/privacy_button"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/icon_title_primary"
                     android:layout_marginEnd="16dp"
@@ -155,7 +154,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/personal_info_button" />
+                    app:layout_constraintTop_toBottomOf="@+id/privacy_button" />
 
                 <Button
                     android:id="@+id/about_button"
@@ -222,12 +221,14 @@
                 <TextView
                     android:id="@+id/email_description"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_marginBottom="24dp"
                     android:layout_marginEnd="108dp"
                     android:layout_marginStart="16dp"
                     android:text="@string/settings_email_subscription_description_on"
                     android:textColor="@color/colorSecondaryFont"
                     android:textSize="@dimen/settings_secondary_heading"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"

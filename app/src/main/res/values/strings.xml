@@ -51,6 +51,9 @@
       Settings information
     -->
     <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_settings_profile">Profile</string>
+    <string name="title_activity_settings_password">Password</string>
+    <string name="title_activity_settings_about">About</string>
 
     <!-- Opt in -->
     <string name="settings_affective_data">Affective Data</string>
@@ -83,9 +86,13 @@
 
     <!-- About -->
     <string name="settings_about">About</string>
-    <string name="settings_about_description">Information about the application</string>
+    <string name="settings_author_title">Author</string>
+    <string name="settings_author">Alpha Nexus Technologies LLC</string>
+    <string name="settings_author_facebook"><a href="https://www.facebook.com/alphanexustech">Like us on Facebook!</a></string>
     <string name="privacy_policy"><a href="http://alphanex.us/privacy.pdf">Privacy Policy</a></string>
     <string name="tos"><a href="http://alphanex.us/tos.pdf">Terms of Service</a></string>
+    <string name="privacy_policy_button_text">Privacy Policy</string>
+    <string name="tos_button_text">Terms of Service</string>
 
     <!-- E-mail Subscription -->
     <string name="settings_email_subscription">E-mail Subscription</string>
