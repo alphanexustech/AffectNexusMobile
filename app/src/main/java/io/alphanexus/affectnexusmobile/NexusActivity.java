@@ -142,10 +142,10 @@ public class NexusActivity extends AppCompatActivity {
                 error.printStackTrace();
                 new CountDownTimer(10000, 1000) {
                     public void onTick(long millisUntilFinished) {
-                        String message = "You're log in credentials are old. Please log in. We'll help you out, redirecting you to the log in page in ";
+                        String message = "Your log in credentials are old. Please log in. We'll help you out, redirecting you to the log in page in ";
                         String secondsText = " seconds.";
                         if (millisUntilFinished < 2000) {
-                            secondsText = "second.";
+                            secondsText = " second.";
                         }
                         InfoText.setText(message + millisUntilFinished / 1000 + secondsText);
                     }
