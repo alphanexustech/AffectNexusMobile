@@ -160,7 +160,8 @@ public class SignupActivity extends AppCompatActivity {
 
     private void serverValidation( final String email, final String username,
             final String password, final String confirmPassword) {
-        String url = "http://affectnexus.com:3000/users/signup";
+        String assistantURL = ConfigHelper.getConfigValue(this, "assistantServer") + ':' + ConfigHelper.getConfigValue(this, "assistantPort");
+        String url = assistantURL + "/users/signup";
         JSONObject payload = new JSONObject();
         try {
             payload.put("email", email);

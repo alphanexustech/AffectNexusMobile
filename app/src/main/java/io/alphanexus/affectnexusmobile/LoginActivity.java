@@ -102,7 +102,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void serverValidation(final String username, final String password) {
-        String url = "http://affectnexus.com:3000/users/login";
+        String assistantURL = ConfigHelper.getConfigValue(this, "assistantServer") + ':' + ConfigHelper.getConfigValue(this, "assistantPort");
+        String url = assistantURL + "/users/login";
         JSONObject payload = new JSONObject();
         try {
             payload.put("password", password);

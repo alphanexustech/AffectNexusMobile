@@ -100,8 +100,9 @@ public class NexusActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        String collection = "beta_records-07jan2018";
-        String url = "http://affectnexus.com:3000/scorer/analyses/" + collection + "/1/5"; // For now, 20 For mobile from most recent page.
+        String collection = ConfigHelper.getConfigValue(this, "mongo_collection");
+        String assistantURL = ConfigHelper.getConfigValue(this, "assistantServer") + ':' + ConfigHelper.getConfigValue(this, "assistantPort");
+        String url = assistantURL + "/scorer/analyses/" + collection + "/1/5"; // For now, 5 For mobile from most recent page.
 
         final String FINAL_ACCESS_TOKEN = ACCESS_TOKEN;
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET,

@@ -140,7 +140,8 @@ public class ProcessActivity extends Activity {
     }
 
     private void startProcess(String processText, JSONObject USER_DATA) {
-        String url = "http://affectnexus.com:3000/scorer/analyze_emotion_set";
+        String assistantURL = ConfigHelper.getConfigValue(this, "assistantServer") + ':' + ConfigHelper.getConfigValue(this, "assistantPort");
+        String url = assistantURL + "/scorer/analyze_emotion_set";
         JSONObject payload = new JSONObject();
         try {
             // Request for processing emotions has a few knobs and levers.
