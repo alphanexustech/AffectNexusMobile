@@ -12,4 +12,5 @@
     <color name="colorAffectDisplayNameColor">#cccccc</color>
     <color name="colorAffectWeightNameBackground">#cccccc</color>
     <color name="colorAffectWeightNameColor">#131313</color>
+    <color name="colorSuccessFont">#dfffd7</color>
 </resources>
