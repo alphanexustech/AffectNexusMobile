@@ -61,7 +61,7 @@
     <string name="settings_affective_data_description_off">We understand. We won\'t use your data in our research and development</string>
     <string name="opt_in_primary">Thanks for signing up!</string>
     <string name="opt_in_secondary">Our products are more reliable and useful when we have data.\n\nMay we use your data for research and development?</string>
-    <string name="opt_in_tertiary">You can change you choice on the settings page.</string>
+    <string name="opt_in_tertiary">You can change your choice on the settings page.</string>
     <string name="opt_in_yes">Yes</string>
     <string name="opt_in_no">Not right now</string>
 
@@ -79,9 +79,9 @@
     <string name="settings_delete_profile_title_message">Are you absolutely sure?</string>
     <string name="settings_delete_profile_second_message">This action cannot be undone.</string>
     <string name="settings_delete_profile_third_message">This action will <i>NOT</i> remove any data you have already provided us.</string>
-    <string name="settings_delete_profile_fourth_message">This action will <i>NOT</i> refund any purchases you have already provided to us.</string>
+    <string name="settings_delete_profile_fourth_message">This action will <i>NOT</i> refund any purchases you have already made.</string>
     <string name="settings_delete_profile_final_message">Are you sure you want to delete your profile?</string>
-    <string name="settings_delete_profile_no_button_text">Nevermind</string>
+    <string name="settings_delete_profile_no_button_text">Never mind</string>
     <string name="settings_delete_profile_yes_button_text">Yes, delete my profile.</string>
 
     <!-- Change Password Strings -->
