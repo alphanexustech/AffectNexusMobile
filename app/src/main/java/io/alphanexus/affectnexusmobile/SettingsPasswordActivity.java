@@ -200,6 +200,7 @@ public class SettingsPasswordActivity extends AppCompatActivity {
             );
             UpdateProfile.setEnabled(true);
         } else {
+            ConfirmPassword.setError(null);
             InfoText.setText("Loading...");
             InfoText.setTextColor(
                     ContextCompat.getColor(SettingsPasswordActivity.this, R.color.colorSecondaryFont)
@@ -225,7 +226,6 @@ public class SettingsPasswordActivity extends AppCompatActivity {
         }
 
         JSONObject payload = new JSONObject();
-        Log.i("USER_SETTINGS_DATA", String.valueOf(USER_SETTINGS_DATA));
         String displayName = "";
         // If the user never changes the display name, then it possible that it is null.
         // This logic is for backwards compatibility.
@@ -250,8 +250,6 @@ public class SettingsPasswordActivity extends AppCompatActivity {
             e.printStackTrace();
             handleErrorMessage();
         }
-
-        Log.i("JSON", String.valueOf(payload));
 
         String assistantURL = ConfigHelper.getConfigValue(this, "assistantServer") + ':' + ConfigHelper.getConfigValue(this, "assistantPort");
         String url = assistantURL + "/users/account/";

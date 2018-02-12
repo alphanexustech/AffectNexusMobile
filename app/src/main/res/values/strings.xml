@@ -76,6 +76,13 @@
     <!-- Delete Profile -->
     <string name="settings_delete_profile_text">Delete Profile</string>
     <string name="settings_delete_description">If you would like to ensure that we no longer collect, disclose, or contact you, then you may delete your account. You may also get in touch with us at contact@alphanex.us for more information.</string>
+    <string name="settings_delete_profile_title_message">Are you absolutely sure?</string>
+    <string name="settings_delete_profile_second_message">This action cannot be undone.</string>
+    <string name="settings_delete_profile_third_message">This action will <i>NOT</i> remove any data you have already provided us.</string>
+    <string name="settings_delete_profile_fourth_message">This action will <i>NOT</i> refund any purchases you have already provided to us.</string>
+    <string name="settings_delete_profile_final_message">Are you sure you want to delete your profile?</string>
+    <string name="settings_delete_profile_no_button_text">Nevermind</string>
+    <string name="settings_delete_profile_yes_button_text">Yes, delete my profile.</string>
 
     <!-- Change Password Strings -->
     <string name="settings_change_password">Password</string>
