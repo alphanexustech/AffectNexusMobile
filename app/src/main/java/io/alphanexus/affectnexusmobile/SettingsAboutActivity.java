@@ -22,8 +22,8 @@ public class SettingsAboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_settings);
         setupActionBar();
 
-        FacebookLink = findViewById(R.id.author_link);
-        PrivacyButton = findViewById(R.id.privacy_button);
+        FacebookLink = findViewById(R.id.affective_data_description);
+        PrivacyButton = findViewById(R.id.profile_button);
         TOSButton = findViewById(R.id.tos_button);
 
         FacebookLink.setMovementMethod(LinkMovementMethod.getInstance());

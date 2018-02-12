@@ -237,8 +237,8 @@ public class SettingsPasswordActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         try {
-            payload.put("firstName", USER_SETTINGS_DATA.get("email"));
-            payload.put("lastName", USER_SETTINGS_DATA.get("username"));
+            payload.put("firstName", USER_SETTINGS_DATA.get("firstName"));
+            payload.put("lastName", USER_SETTINGS_DATA.get("lastName"));
             payload.put("displayName", displayName);
             payload.put("affectiveData", USER_SETTINGS_DATA.get("affectiveData"));
             payload.put("emailSub", USER_SETTINGS_DATA.get("emailSub"));

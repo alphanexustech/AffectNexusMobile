@@ -40,7 +40,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/author_link"
+                    android:id="@+id/affective_data_description"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="108dp"
@@ -74,7 +74,7 @@
                     android:background="@color/colorPrimaryFont"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/author_link" />
+                    app:layout_constraintTop_toBottomOf="@+id/affective_data_description" />
 
                 <ImageView
                     android:id="@+id/user_icon"
@@ -113,7 +113,7 @@
                     app:srcCompat="@drawable/question_circle_neg" />
 
                 <Button
-                    android:id="@+id/privacy_button"
+                    android:id="@+id/profile_button"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/icon_title_primary"
                     android:layout_marginEnd="16dp"
@@ -156,7 +156,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/privacy_button" />
+                    app:layout_constraintTop_toBottomOf="@+id/profile_button" />
 
                 <Button
                     android:id="@+id/about_button"
@@ -214,10 +214,9 @@
                     android:id="@+id/email_toggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginEnd="16dp"
                     android:layout_marginTop="16dp"
-                    android:checked="true"
-                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/hr_02" />
 
                 <TextView
@@ -235,6 +234,19 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/email_title" />
+
+                <TextView
+                    android:id="@+id/info_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/email_description" />
 
             </android.support.constraint.ConstraintLayout>
         </LinearLayout>
