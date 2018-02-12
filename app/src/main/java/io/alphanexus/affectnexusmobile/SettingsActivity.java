@@ -182,8 +182,6 @@ public class SettingsActivity extends AppCompatActivity {
 
                     JSONObject userSettings = (JSONObject) response.get("user");
 
-                    Log.i("USER_SETTING", String.valueOf(userSettings));
-
                     boolean affectiveDataValue = 1 == Integer.parseInt((String) userSettings.get("affectiveData"));
                     if (affectiveDataValue) {
                         AffectiveDataToggle.setChecked(true);
@@ -195,11 +193,9 @@ public class SettingsActivity extends AppCompatActivity {
 
                     boolean emailSubValue = 1 == Integer.parseInt((String) userSettings.get("emailSub"));
                     if ((emailSubValue)) {
-                        Log.i("here", "here");
                         EmailToggle.setChecked(true);
                         EmailDescription.setText(R.string.settings_email_subscription_description_on);
                     } else {
-                        Log.i("else ----", "else ----");
                         EmailToggle.setChecked(false);
                         EmailDescription.setText(R.string.settings_email_subscription_description_off);
                     }
@@ -307,7 +303,7 @@ public class SettingsActivity extends AppCompatActivity {
                 url, payload, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                InfoText.setText("Updated Successfully");
+                InfoText.setText("Settings Synced");
                 InfoText.setTextColor(
                         ContextCompat.getColor(SettingsActivity.this, R.color.colorSuccessFont)
                 );

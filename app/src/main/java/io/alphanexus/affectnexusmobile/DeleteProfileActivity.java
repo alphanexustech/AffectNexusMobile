@@ -157,6 +157,7 @@ public class DeleteProfileActivity extends AppCompatActivity {
                     handleErrorMessage();
                 } catch (IOException e) {
                     e.printStackTrace();
+                    e.printStackTrace();
                     handleErrorMessage();
                 }
             }
