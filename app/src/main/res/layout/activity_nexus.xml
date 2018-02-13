@@ -17,6 +17,7 @@
         android:layout_below="@+id/process_description"
         android:layout_margin="@dimen/alt_primary_margin"
         android:clickable="true"
+        android:focusable="true"
         app:backgroundTint="@color/colorBackground"
         app:layout_anchor="@+id/linear_layout"
         app:layout_anchorGravity="right|bottom"
@@ -35,7 +36,7 @@
             android:background="@drawable/gradient01">
 
             <ImageView
-                android:id="@+id/rightarrow"
+                android:id="@+id/bullseye_icon"
                 android:layout_width="@dimen/icon_title_primary"
                 android:layout_height="@dimen/icon_title_primary"
                 android:layout_alignParentLeft="true"
@@ -57,9 +58,9 @@
                 android:id="@+id/process_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/rightarrow"
-                android:layout_toEndOf="@+id/rightarrow"
-                android:layout_toRightOf="@+id/rightarrow"
+                android:layout_alignTop="@+id/bullseye_icon"
+                android:layout_toEndOf="@+id/bullseye_icon"
+                android:layout_toRightOf="@+id/bullseye_icon"
                 android:text="@string/nexus_title"
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/primary_heading"

@@ -17,7 +17,7 @@
         <TextView
             android:id="@+id/weaker_text2"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="72dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="8dp"
@@ -260,7 +260,7 @@
             android:id="@+id/process_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="12dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:gravity="end"

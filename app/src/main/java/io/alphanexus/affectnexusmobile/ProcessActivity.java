@@ -1,9 +1,8 @@
 package io.alphanexus.affectnexusmobile;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.icu.text.IDNA;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -30,7 +29,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ProcessActivity extends Activity {
+public class ProcessActivity extends AppCompatActivity {
 
     private static final int MY_SOCKET_TIMEOUT_MS = 60000; // 1 minute, that's all the time it gets.
     private static final int MY_DEFAULT_MAX_RETRIES = 3;
