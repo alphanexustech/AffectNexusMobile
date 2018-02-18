@@ -16,6 +16,7 @@
     <string name="error_field_required">This field is required</string>
     <string name="title_activity_login">Log In</string>
     <string name="title_activity_signup">Sign Up</string>
+    <string name="forgot_password">Forgot Password?</string>
 
     <!-- Everything else except Settings -->
     <string name="title_home">Home</string>

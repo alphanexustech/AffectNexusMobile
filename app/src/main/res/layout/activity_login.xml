@@ -87,6 +87,16 @@
             android:textColor="@color/colorSecondaryFont"
             android:textSize="14sp" />
 
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/caption_top_padding"
+            android:text="@string/forgot_password"
+            android:textAlignment="center"
+            android:textColor="@color/colorSecondaryFont"
+            android:textSize="14sp" />
+
     </LinearLayout>
 
 </LinearLayout>

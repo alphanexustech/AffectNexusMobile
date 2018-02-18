@@ -1,8 +1,10 @@
 package io.alphanexus.affectnexusmobile;
 
 import android.annotation.TargetApi;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private TextView Info;
     private TextView Error;
+    private TextView ForgotPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +50,29 @@ public class LoginActivity extends AppCompatActivity {
 
         Info = (TextView)findViewById(R.id.info);
         Error = (TextView)findViewById(R.id.error);
+        ForgotPassword = (TextView)findViewById(R.id.forgot_password);
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validate(Username.getText().toString(), Password.getText().toString());
+            validate(Username.getText().toString(), Password.getText().toString());
+            }
+        });
+
+        ForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            String mailto = "mailto:support@alphanex.us";
+
+            Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Help. I Forgot My Password.");
+            emailIntent.setData(Uri.parse(mailto));
+
+            try {
+                startActivity(emailIntent);
+            } catch (ActivityNotFoundException e) {
+                e.printStackTrace();
+            }
             }
         });
     }
