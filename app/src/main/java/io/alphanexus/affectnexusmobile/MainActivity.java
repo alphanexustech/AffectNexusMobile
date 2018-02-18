@@ -13,6 +13,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void goSignup(View view) {
+        Intent intent = new Intent(this, SignupActivity.class);
+        startActivity(intent);
+    }
+
     public void goLogin(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);

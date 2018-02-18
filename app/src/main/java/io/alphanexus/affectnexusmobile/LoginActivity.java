@@ -1,11 +1,15 @@
 package io.alphanexus.affectnexusmobile;
 
 import android.annotation.TargetApi;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -31,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
     private Button Login;
 
     private TextView Info;
+    private TextView Error;
+    private TextView ForgotPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +49,30 @@ public class LoginActivity extends AppCompatActivity {
         Login = (Button) findViewById(R.id.log_in_button);
 
         Info = (TextView)findViewById(R.id.info);
+        Error = (TextView)findViewById(R.id.error);
+        ForgotPassword = (TextView)findViewById(R.id.forgot_password);
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validate(Username.getText().toString(), Password.getText().toString());
+            validate(Username.getText().toString(), Password.getText().toString());
+            }
+        });
+
+        ForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            String mailto = "mailto:support@alphanex.us";
+
+            Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Help. I Forgot My Password.");
+            emailIntent.setData(Uri.parse(mailto));
+
+            try {
+                startActivity(emailIntent);
+            } catch (ActivityNotFoundException e) {
+                e.printStackTrace();
+            }
             }
         });
     }
@@ -64,16 +89,42 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void validate(String username, String password) {
-        if (username != "" && password != "") {
+        boolean cancel = false;
+        Login.setEnabled(false);
+        View focusView = null;
+
+        // Check for a valid password, if the user entered one.
+        if (TextUtils.isEmpty(password)) {
+            Password.setError(getString(R.string.error_field_required));
+            focusView = Password;
+            cancel = true;
+        }
+
+        // Check for a valid username.
+        if (TextUtils.isEmpty(username)) {
+            Username.setError(getString(R.string.error_field_required));
+            focusView = Username;
+            cancel = true;
+        }
+
+        if (cancel) {
+            // There was an error; don't attempt login and focus the first
+            // form field with an error.
+            focusView.requestFocus();
+            // Also, set the other error messages.
+            Error.setText("The log in information is invalid.");
+            Info.setText("");
+            Login.setEnabled(true);
+        } else {
+            Error.setText("");
             Info.setText("Loading...");
             serverValidation(username, password);
-        } else {
-            Info.setText("The login information is invalid.");
         }
     }
 
     private void serverValidation(final String username, final String password) {
-        String url = "http://affectnexus.com:3000/users/login";
+        String assistantURL = ConfigHelper.getConfigValue(this, "assistantServer") + ':' + ConfigHelper.getConfigValue(this, "assistantPort");
+        String url = assistantURL + "/users/login";
         JSONObject payload = new JSONObject();
         try {
             payload.put("password", password);
@@ -88,7 +139,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 try {
                     String FILENAME = "user_data";
-                    String string = "hello world!";
+                    String string = response.toString();
+                    Log.i("Status", "Saved new user data.");
 
                     FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
                     // Save the response
@@ -98,19 +150,26 @@ public class LoginActivity extends AppCompatActivity {
                     Info.setText("");
                     Intent intent = new Intent(LoginActivity.this, NexusActivity.class);
                     startActivity(intent);
+                    Login.setEnabled(true);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
-                    Info.setText("Fail 1");
+                    Error.setText("There was a server error.");
+                    Info.setText("");
+                    Login.setEnabled(true);
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Info.setText("Fail 2");
+                    Error.setText("There was a server error.");
+                    Info.setText("");
+                    Login.setEnabled(true);
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                Info.setText("Sorry, the username and password do not match.");
+                Error.setText("Sorry, the username and password do not match.");
+                Info.setText("");
+                Login.setEnabled(true);
             }
         });
 

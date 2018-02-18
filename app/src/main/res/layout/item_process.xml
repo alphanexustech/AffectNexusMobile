@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/primary_margin"
+    android:background="@drawable/gradient02"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="198dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/weaker_text2"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="@string/affect_caption"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weaker_text" />
+
+        <TextView
+            android:id="@+id/weaker_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="@string/weaker_affect"
+            android:textColor="@color/colorAffectDisplayNameColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emotion_name05" />
+
+        <TextView
+            android:id="@+id/strongest_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="@string/stronger_affect"
+            android:textColor="@color/colorAffectDisplayNameColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/emotion_name05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAffectDisplayNameBackground"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="TextView"
+            android:textColor="@color/colorAffectDisplayNameColor"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emotion_name04" />
+
+        <TextView
+            android:id="@+id/emotion_weight05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAffectWeightNameBackground"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="TextView"
+            android:textColor="@color/colorAffectWeightNameColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/emotion_name01"
+            app:layout_constraintTop_toBottomOf="@+id/emotion_weight04" />
+
+        <TextView
+            android:id="@+id/emotion_name04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAffectDisplayNameBackground"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="TextView"
+            android:textColor="@color/colorAffectDisplayNameColor"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emotion_name03" />
+
+        <TextView
+            android:id="@+id/emotion_weight04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAffectWeightNameBackground"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="TextView"
+            android:textColor="@color/colorAffectWeightNameColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/emotion_name01"
+            app:layout_constraintTop_toBottomOf="@+id/emotion_weight03" />
+
+        <TextView
+            android:id="@+id/emotion_name03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAffectDisplayNameBackground"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="TextView"
+            android:textColor="@color/colorAffectDisplayNameColor"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emotion_name02" />
+
+        <TextView
+            android:id="@+id/emotion_weight03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAffectWeightNameBackground"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="TextView"
+            android:textColor="@color/colorAffectWeightNameColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/emotion_name01"
+            app:layout_constraintTop_toBottomOf="@+id/emotion_weight02" />
+
+        <TextView
+            android:id="@+id/emotion_name02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAffectDisplayNameBackground"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="TextView"
+            android:textColor="@color/colorAffectDisplayNameColor"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emotion_name01" />
+
+        <TextView
+            android:id="@+id/emotion_weight02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAffectWeightNameBackground"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="TextView"
+            android:textColor="@color/colorAffectWeightNameColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/emotion_name01"
+            app:layout_constraintTop_toBottomOf="@+id/emotion_weight01" />
+
+        <TextView
+            android:id="@+id/emotion_name01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAffectDisplayNameBackground"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="TextView"
+            android:textColor="@color/colorAffectDisplayNameColor"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/strongest_text" />
+
+        <TextView
+            android:id="@+id/emotion_weight01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAffectWeightNameBackground"
+            android:padding="@dimen/colorAffectDisplayNamePadding"
+            android:text="TextView"
+            android:textColor="@color/colorAffectWeightNameColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/emotion_name01"
+            app:layout_constraintTop_toBottomOf="@+id/strongest_text" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/process_contraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/process_document"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="38dp"
+            android:text="Default Text"
+            android:textColor="@color/colorPrimaryFont"
+            app:layout_constraintBottom_toTopOf="@+id/process_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.016" />
+
+        <TextView
+            android:id="@+id/process_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="end"
+            android:text="TextView"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorPrimaryFont"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>

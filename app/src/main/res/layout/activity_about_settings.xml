@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundAlt">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="508dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/affect_data_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/settings_author_title"
+                    android:textColor="@color/colorPrimaryFont"
+                    android:textSize="@dimen/settings_primary_heading"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/profile_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/settings_author"
+                    android:textColor="@color/colorSecondaryFont"
+                    android:textSize="@dimen/settings_secondary_heading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/affect_data_title" />
+
+                <TextView
+                    android:id="@+id/affective_data_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/settings_author_facebook"
+                    android:textColor="@color/colorSecondaryFont"
+                    android:textSize="@dimen/settings_secondary_heading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profile_description" />
+
+                <TextView
+                    android:id="@+id/copyright"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/settings_copyright"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/colorSecondaryFont"
+                    android:textSize="@dimen/settings_secondary_heading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/affective_data_description" />
+
+                <View
+                    android:id="@+id/hr_01"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimaryFont"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/copyright" />
+
+                <ImageView
+                    android:id="@+id/privacy_pdf_icon"
+                    android:layout_width="@dimen/icon_button_primary"
+                    android:layout_height="@dimen/icon_button_primary"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hr_01"
+                    app:srcCompat="@drawable/file_pdf_neg" />
+
+                <Button
+                    android:id="@+id/profile_button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/icon_title_primary"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="start"
+                    android:onClick="goProfile"
+                    android:paddingLeft="@dimen/button_icon_padding"
+                    android:text="@string/privacy_policy_button_text"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryFont"
+                    android:textSize="@dimen/settings_primary_heading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/hr_01" />
+
+                <Button
+                    android:id="@+id/tos_button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/icon_title_primary"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="start"
+                    android:onClick="goProfile"
+                    android:paddingLeft="@dimen/button_icon_padding"
+                    android:text="@string/tos_button_text"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryFont"
+                    android:textSize="@dimen/settings_primary_heading"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profile_button" />
+
+                <ImageView
+                    android:id="@+id/tos_pdf_icon"
+                    android:layout_width="@dimen/icon_button_primary"
+                    android:layout_height="@dimen/icon_button_primary"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/privacy_pdf_icon"
+                    app:srcCompat="@drawable/file_pdf_neg" />
+
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

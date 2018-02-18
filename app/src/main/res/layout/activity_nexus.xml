@@ -5,43 +5,87 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/colorBackground"
     tools:context="io.alphanexus.affectnexusmobile.NexusActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/process_fab"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
-        android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/process_description"
+        android:layout_alignRight="@+id/process_description"
+        android:layout_below="@+id/process_description"
+        android:layout_margin="@dimen/alt_primary_margin"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="@color/colorBackground"
+        app:layout_anchor="@+id/linear_layout"
+        app:layout_anchorGravity="right|bottom"
+        app:rippleColor="@color/colorBackgroundAlt"
+        app:srcCompat="@drawable/long_arrow_alt_right_neg" />
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar">
+            android:background="@drawable/gradient01">
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+            <ImageView
+                android:id="@+id/bullseye_icon"
+                android:layout_width="@dimen/icon_title_primary"
+                android:layout_height="@dimen/icon_title_primary"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="@dimen/primary_margin"
+                app:srcCompat="@drawable/bullseye_neg" />
+
+            <ImageView
+                android:id="@+id/settings_icon"
+                android:layout_width="@dimen/icon_title_primary"
+                android:layout_height="@dimen/icon_title_primary"
+                android:layout_alignEnd="@+id/process_description"
+                android:layout_alignRight="@+id/process_description"
+                android:layout_alignTop="@+id/process_title"
+                app:srcCompat="@drawable/cogs_neg" />
+
+            <TextView
+                android:id="@+id/process_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/bullseye_icon"
+                android:layout_toEndOf="@+id/bullseye_icon"
+                android:layout_toRightOf="@+id/bullseye_icon"
+                android:text="@string/nexus_title"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/primary_heading"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/process_description"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/process_title"
+                android:layout_margin="@dimen/primary_margin"
+                android:text="@string/nexus_description_short"
+                android:textAlignment="textStart"
+                android:gravity="start"
+                android:textColor="@color/colorPrimaryFont" />
 
-        </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
+        </RelativeLayout>
 
-    <include layout="@layout/content_nexus" />
+        <include
+            layout="@layout/content_nexus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+    </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

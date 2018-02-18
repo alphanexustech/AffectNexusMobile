@@ -11,9 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,9 +34,62 @@
                 android:value="io.alphanexus.affectnexusmobile.MainActivity" />
         </activity>
         <activity
+            android:name=".SignupActivity"
+            android:label="@string/title_activity_signup"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.alphanexus.affectnexusmobile.MainActivity" />
+        </activity>
+        <activity
             android:name=".NexusActivity"
-            android:label="@string/title_activity_nexus"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProcessActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OptinActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".NexusActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.alphanexus.affectnexusmobile.NexusActivity" />
+        </activity>
+        <activity
+            android:name=".SettingsProfileActivity"
+            android:label="@string/title_activity_settings_profile"
+            android:parentActivityName=".SettingsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.alphanexus.affectnexusmobile.SettingsActivity" />
+        </activity>
+        <activity
+            android:name=".SettingsPasswordActivity"
+            android:label="@string/title_activity_settings_password"
+            android:parentActivityName=".SettingsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.alphanexus.affectnexusmobile.SettingsActivity" />
+        </activity>
+        <activity
+            android:name=".SettingsAboutActivity"
+            android:label="@string/title_activity_settings_about"
+            android:parentActivityName=".SettingsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.alphanexus.affectnexusmobile.SettingsActivity" />
+        </activity>
+        <activity
+            android:name=".DeleteProfileActivity"
+            android:label="@string/settings_delete_profile_text"
+            android:parentActivityName=".SettingsProfileActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.alphanexus.affectnexusmobile.SettingsProfileActivity" />
+        </activity>
     </application>
 
 </manifest>

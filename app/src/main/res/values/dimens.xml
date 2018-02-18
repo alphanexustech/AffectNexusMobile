@@ -5,4 +5,17 @@
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="caption_top_padding">8pt</dimen>
+    <dimen name="primary_padding">16dp</dimen>
+    <dimen name="primary_margin">16dp</dimen>
+    <dimen name="primary_heading">16sp</dimen>
+    <dimen name="icon_title_primary">24dp</dimen>
+    <dimen name="colorAffectDisplayNamePadding">4dp</dimen>
+    <dimen name="alt_primary_margin">20dp</dimen>
+    <dimen name="display_primary_heading">30dp</dimen>
+    <dimen name="display_secondary_heading">18dp</dimen>
+    <dimen name="settings_primary_heading">18sp</dimen>
+    <dimen name="settings_secondary_heading">12sp</dimen>
+    <dimen name="button_icon_padding">32dp</dimen>
+    <dimen name="icon_button_primary">16dp</dimen>
 </resources>

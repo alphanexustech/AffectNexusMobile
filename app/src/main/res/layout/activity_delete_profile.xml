@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.alphanexus.affectnexusmobile.DeleteProfileActivity"
+    android:background="@color/colorBackgroundAlt">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/third"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:gravity="start"
+                    android:text="@string/settings_delete_profile_third_message"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryFont"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.503"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fourth" />
+
+                <TextView
+                    android:id="@+id/not_undone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:padding="@dimen/primary_padding"
+                    android:text="@string/settings_delete_profile_second_message"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/display_secondary_heading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/are_you_really_sure" />
+
+                <TextView
+                    android:id="@+id/final_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/settings_delete_profile_final_message"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorPrimaryFont"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.506"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/third" />
+
+                <TextView
+                    android:id="@+id/fourth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="start"
+                    android:text="@string/settings_delete_profile_fourth_message"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryFont"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/not_undone" />
+
+                <TextView
+                    android:id="@+id/are_you_really_sure"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/settings_delete_profile_title_message"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryFont"
+                    android:textSize="@dimen/display_primary_heading"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="108dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/final_text"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <Button
+                        android:id="@+id/no_action"
+                        android:layout_width="188dp"
+                        android:layout_height="72dp"
+                        android:layout_marginLeft="@dimen/primary_margin"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:drawable/screen_background_dark_transparent"
+                        android:onClick="goBack"
+                        android:text="@string/settings_delete_profile_no_button_text"
+                        android:textColor="@color/colorPrimaryFont" />
+
+                    <Button
+                        android:id="@+id/yes_action"
+                        android:layout_width="wrap_content"
+                        android:layout_height="72dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="@dimen/primary_margin"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/colorErrorFont"
+                        android:onClick="reallyDeleteProfile"
+                        android:text="@string/settings_delete_profile_yes_button_text"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/info_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintVertical_bias="0.384" />
+
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
